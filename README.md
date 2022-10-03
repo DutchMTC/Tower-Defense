@@ -25,7 +25,7 @@ next_lev --> start
 ```mermaid
 flowchart TD
 
-start((Start)) -->| can_spawn(Can Spawn at location)
-can_spawn --> |yes| open_shop(Open Shop GUI)
+start((Start)) -->| can_spawn(check location)
+can_spawn --> |yes| open_shop(open shop gui)
 can_spawn --> |no| can_spawn
 ```
