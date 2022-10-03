@@ -3,29 +3,14 @@
 ```mermaid
 flowchart TD
 
-start((Start)) -->|wait 5 seconds| spawn_w(spawn wave)
-spawn_w --> checken(check enemies in list)
-checken --> spawn_e(spawn enemies at once)
-spawn_e --> reached_base{enemy reached base?}
-reached_base -->|yes| lose_life(player loses a life)
-reached_base -->|no| money(player makes money)
-lose_life --> wave_done{wave done?}
-money --> wave_done
-wave_done -->|no| reached_base
-no_more_waves{no more waves?} -->|no more| more_lev(more levels?)
-wave_done -->|yes| no_more_waves
-no_more_waves -->|still waves| next_wave(goto next wave)
-next_wave --> start_wave
-start_wave --> spawn_w
-more_lev -->|yes, there's more| next_lev(start next level)
-more_lev -->|no more levels| end_d((end))
-next_lev --> start
-```
-
-```mermaid
-flowchart TD
-
-start((Start)) -->|can_spawn(check location)
-can_spawn -->|yes| open_shop(open shop gui)
-can_spawn -->|no| can_spawn
+start(((click)))--> can_spawn{can spawn here?}
+can_spawn-->|yes| open_shop(open shop)
+open_shop--> tower_click{player wants to buy tower?}
+can_spawn-->|no| cannot_spawn_error(show error)
+cannot_spawn_error--> close_gui
+tower_click-->|no| close_gui(close gui)
+tower_click-->|yes|take_away_money(take away money)
+take_away_money--> buy_more_towers{player wants to buy more towers?}
+buy_more_towers-->|no| close_gui(close gui)
+buy_more_towers-->|yes| open_shop(open shop)
 ```
