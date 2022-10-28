@@ -53,6 +53,6 @@ public class Node : MonoBehaviour
     private void ShowTurretInfo()
     {
         attackRangeSprite.SetActive(true);
-        attackRangeSprite.transform.localScale = _rangeOriginalSize * Turret.AttackRange / (_rangeSize / 2);
+       
     }
 }

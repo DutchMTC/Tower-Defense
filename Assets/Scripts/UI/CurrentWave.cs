@@ -12,7 +12,7 @@ public class CurrentWave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _currentWave = GameObject.Find("LevelManager").GetComponent<LevelManager>().CurrentWave;
+        _currentWave = GameObject.Find("Spawner").GetComponent<Spawner>()._currentWave;
         _waveText.text = "Wave " + _currentWave.ToString();
     }
 }
