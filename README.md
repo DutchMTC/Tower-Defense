@@ -1,6 +1,6 @@
 # Tower Defense
 
-### [Download]()
+### [Download](https://github.com/DutchMTC/Tower-Defense/releases/tag/Release)
 
 ## Controls
 All you need to play the game is your mouse.
